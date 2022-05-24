@@ -72,6 +72,7 @@ namespace SpaceRace
                     downArrowDown = true;
                     break;
                 case Keys.Space:
+
                     if (gameState == "waiting" || gameState == "win1" || gameState == "win2")
                     {
                         GameInitialize();
@@ -140,6 +141,7 @@ namespace SpaceRace
                 //replace the rectangle in the list with updated one using new y 
                 leftAs[i] = new Rectangle(x, leftAs[i].Y, leftAs[i].Width, leftAs[i].Height);
             }
+
             //move asteroids right to left
             for (int i = 0; i < rightAs.Count(); i++)
             {
@@ -148,11 +150,13 @@ namespace SpaceRace
                 //replace the rectangle in the list with updated one using new y 
                 rightAs[i] = new Rectangle(x, rightAs[i].Y, rightAs[i].Width, rightAs[i].Height);
             }
+
             counter++;
             int y;
             int y2;
             y = randGen.Next(0, 325);
             y2 = randGen.Next(0, 325);
+
             if (counter == 6)
             {
                 leftAs.Add(new Rectangle(0, y, 3, 3));
@@ -175,19 +179,16 @@ namespace SpaceRace
                 Yay.Play();
             }
 
-
             if (player1Score == 3)
             {
                 gameEngine.Enabled = false;
                 gameState = "win1";
             }
 
-
             if (player2Score == 3)
             {
                 gameEngine.Enabled = false;
                 gameState = "win2";
-
             }
 
             //Astroid hitting player
@@ -199,6 +200,7 @@ namespace SpaceRace
                     Hit.Play();
                 }
             }
+
             for (int i = 0; i < leftAs.Count(); i++)
             {
                 if (player2.IntersectsWith(leftAs[i]))
@@ -207,6 +209,7 @@ namespace SpaceRace
                     Hit.Play();
                 }
             }
+
             for (int i = 0; i < rightAs.Count(); i++)
             {
                 if (player2.IntersectsWith(rightAs[i]))
@@ -215,6 +218,7 @@ namespace SpaceRace
                     Hit.Play();
                 }
             }
+
             for (int i = 0; i < rightAs.Count(); i++)
             {
                 if (player1.IntersectsWith(rightAs[i]))
@@ -223,6 +227,24 @@ namespace SpaceRace
                     Hit.Play();
                 }
             }
+
+            //Deletion of Astroids
+            for (int i = 0; i < rightAs.Count(); i++)
+            {
+                if (rightAs[i].X < 1)
+                {
+                    rightAs.RemoveAt(i);
+                }
+            }
+
+            for (int i = 0; i < leftAs.Count(); i++)
+            {
+                if (leftAs[i].X > 600)
+                {
+                    leftAs.RemoveAt(i);
+                }
+            }
+
             Refresh();
         }
 
@@ -251,6 +273,7 @@ namespace SpaceRace
                 {
                     e.Graphics.FillRectangle(whiteBrush, leftAs[i]);
                 }
+
                 for (int i = 0; i < rightAs.Count(); i++)
                 {
                     e.Graphics.FillRectangle(whiteBrush, rightAs[i]);

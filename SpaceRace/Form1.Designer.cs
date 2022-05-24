@@ -42,30 +42,30 @@
             // 
             // score1
             // 
-            this.score1.AutoSize = true;
+            this.score1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.score1.ForeColor = System.Drawing.Color.White;
             this.score1.Location = new System.Drawing.Point(2, 4);
             this.score1.Name = "score1";
-            this.score1.Size = new System.Drawing.Size(47, 13);
+            this.score1.Size = new System.Drawing.Size(127, 31);
             this.score1.TabIndex = 0;
             this.score1.Text = "Score: 0";
             // 
             // score2
             // 
-            this.score2.AutoSize = true;
+            this.score2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.score2.ForeColor = System.Drawing.Color.White;
-            this.score2.Location = new System.Drawing.Point(541, 4);
+            this.score2.Location = new System.Drawing.Point(499, 4);
             this.score2.Name = "score2";
-            this.score2.Size = new System.Drawing.Size(47, 13);
+            this.score2.Size = new System.Drawing.Size(89, 31);
             this.score2.TabIndex = 0;
             this.score2.Text = "Score: 0";
             // 
             // seLabel
             // 
             this.seLabel.BackColor = System.Drawing.Color.Transparent;
-            this.seLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.seLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.seLabel.ForeColor = System.Drawing.Color.White;
-            this.seLabel.Location = new System.Drawing.Point(179, 72);
+            this.seLabel.Location = new System.Drawing.Point(184, 75);
             this.seLabel.Name = "seLabel";
             this.seLabel.Size = new System.Drawing.Size(208, 114);
             this.seLabel.TabIndex = 0;
@@ -89,7 +89,6 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
